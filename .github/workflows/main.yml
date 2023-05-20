@@ -1,12 +1,12 @@
-name: Greetings
-
-on: pull_request
-
+name: Pull Request Workflow
+on:
+  pull_request:
+    types: [opened]
 jobs:
-  greeting:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/first-interaction@v1
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        pr-message: 'Thank you for your contribution! Someone will review it ASAP.'
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Greet user
+      run: echo "Hello"
