@@ -1,6 +1,6 @@
-name: Pull Request Workflow
+name: Issue Workflow
 on:
-  pull_request:
+  issues:
     types: [opened]
 jobs:
   build:
